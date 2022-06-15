@@ -1,0 +1,351 @@
+/* Start Global Variables */
+:root {
+    --main-color: rgb(80, 27, 27);
+    --secondary-color: #7f0505;
+    --main-padding: 100px;
+    --main-duration: 0.3s;
+    --grey-color: #f6f6ff;
+}
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 97px;
+    position: relative;
+}
+header .container::after {
+    content: "";
+    height: 1px;
+    /* Is #a2a2a2 better or not  ????????????????? */
+    background-color: #7f0505;
+    position: absolute;
+    left: 15px;
+    width: calc(100% - 30px);
+    bottom: 0;
+}
+header .container .logo img {
+    height: 80px;
+    /* Is 20px enough ???? */
+    border-radius: 40px;
+}
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header nav ul {
+    display: flex;
+    margin: 0;
+}
+header nav ul li a {
+    background-color: transparent;
+    padding: 40px 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+/* start landing */
+.landing {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url("../images/IMG-20210531-WA0091.jpg");
+    background-size: cover;
+    position: relative;
+}
+/* End landing */
+/*-- Start table -*/
+.statistic {
+    padding-top: var(--main-padding);
+    /* padding-bottom: var(--main-padding); */
+}
+.statistic table {
+    /* Is better to put it in container */
+    min-width: 100%;
+    margin: 0 auto;
+}
+.head td {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+.radius-left {
+    border-top-left-radius: 20px;
+}
+.radius-right {
+    border-top-right-radius: 20px;
+}
+.body td {
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 15px;
+    /* background-color: var(--main-color); */
+    color: black;
+    border-right: 3px solid var(--main-color);
+    border-radius: 8px;
+}
+.grey td {
+    background-color: var(--grey-color);
+    color: var(--secondary-color);
+}
+.body td a {
+    text-decoration: none;
+    width: 100px;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgb(10, 10, 10);
+}
+.body td a:hover {
+    color: rgb(39, 10, 10);
+    background-color: white;
+    box-shadow: 1px 1px 8px 1px var(--main-color), -1px -1px 8px 1px var(--main-color);
+}
+.statistic .content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+div.lable {
+    text-align: center;
+}
+div.lable h3 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-top: 80px;
+    color: var(--secondary-color);
+    text-shadow: 1.5px 1.5px var(--main-color);
+}
+/*End table*/
+/* Start About */
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--grey-color);
+}
+.about .container .content-about {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about .container .text {
+    width: 57.5%;
+
+}
+.about .container .image {
+    width: 50%;
+    position: relative;
+    height: 375px;
+}
+
+.about .content-about .text {
+    flex-basis: calc(100% - 500px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.about .container .image img {
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.about .container .text p:first-of-type {
+    font-weight: bold;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    text-align: start;
+    margin-left: 0;
+}
+.about .content-about .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.about .container .text p:last-of-type {
+    line-height: 1.8;
+    color: #777;
+    margin-top: 50px;
+    text-align: start;
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
+    padding: 20px 30px;
+    padding-right: 35px;
+    margin-right: 41px;
+}
+/* End About */
+/* Start photos */
+.photos {
+    padding-top: var(--main-padding);
+    /* padding-bottom: var(--main-padding); */
+}
+.photos .photo-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* padding: 8px; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 1px 1px 5px 0px black, -1px -1px 5px 0px black;
+}
+.photos .container {
+    /* width: 100%; */
+    display: grid;
+    /* justify-content: space-between; */
+}
+.photos .container .card {
+    width: 32%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.photos .container .card img {
+    width: 250px;
+    height: 330px;
+    margin-bottom: 15px;
+    box-shadow: 2px -2px 3px 0 black, -2px 2px 3px 0 black;
+}
+.photos .caption h4 {
+    text-align: center;
+}
+/* End Sports */
+/*start video*/
+.vedio {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.vedio .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.vedio .container .para {
+    width: 33.5%;
+}
+.vedio .container .para p {
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 20px;
+    border: 1px solid green;
+    box-shadow: inset 1px 1px 5px 0px green, inset -1px -1px 5px 0px green;
+}
+.vedio .container .vedio-container {
+    width: 61.5%;
+}
+.vedio .container .vedio-container video {
+    width: 600px;
+    height: 90%;
+    box-shadow: 1px 1px 5px 0 black, -1px -1px 5px 0 black;
+}
+/* End Global Rules */
+
+/* Start Footer */
+.footer {
+    padding-top: calc(var(--section-padding) / 2);
+    padding-bottom: calc(var(--section-padding) / 2);
+    background-color: var(--secondary-color);
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+.footer .container {
+    position: relative;
+}
+
+.footer p:not(.copyright) {
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    font-size: 22px;
+    width: fit-content;
+    margin: 20px auto;
+    margin-top: 0;
+    color: green;
+    font-weight: bolder;
+}
+.footer .social-icons i {
+    padding: 10px 15px;
+}
+.footer .copyright {
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+.footer .copyright span {
+    font-weight: bold;
+    color: green;
+}
+.footer .container .social-icons a {
+    color: white;
+}
+  /* End Footer */
+
+
+
+
+
+
+
+
+
+

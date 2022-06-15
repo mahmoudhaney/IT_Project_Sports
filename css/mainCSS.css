@@ -1,0 +1,701 @@
+/* Start Global Variables */
+:root {
+    --main-color: rgb(9, 201, 9);
+    --secondary-color: #7f0505;
+    --main-padding: 100px;
+    --main-duration: 0.3s;
+    --grey-color: #f6f6ff;
+}
+/* End global Variables */
+/* Start My Frameworks */
+.main-heading {
+    text-align: center;
+}
+.main-heading h2 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+.main-heading h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    background-color: var(--main-color);
+    bottom: -30px;
+    width: 150px;
+    box-shadow: 0px 2px 4px 0px var(--secondary-color);
+}
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 4px solid var(--main-color);
+    bottom: -38px;
+    background-color: white;
+    box-shadow: 0px 1px 3px 0px #7f0505;
+}
+.main-heading p {
+    width: 550px;
+    margin: 0 auto 50px;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+}
+/* End My Frameworks */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+/* Start Header */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background: var(--secondary-color);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 97px;
+    position: relative;
+}
+header .container::after {
+    content: "";
+    height: 1px;
+    /* Is #a2a2a2 better or not  ????????????????? */
+    background-color: #7f0505;
+    position: absolute;
+    left: 15px;
+    width: calc(100% - 30px);
+    bottom: 0;
+}
+header .container .logo img {
+    height: 60px;
+    /* Is 20px enough ???? */
+    border-radius: 40px;
+}
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header nav ul {
+    display: flex;
+    margin: 0;
+}
+header nav ul li a {
+    background-color: transparent;
+    padding: 30px 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+/* End Header */
+/* Start Landing */
+.landing {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url("../images/back1.jpg");
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(0 0 0 / 40%);
+    width: 100%;
+    height: 100%;
+}   
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    /* border: 5px solid rgb(102 186 5); */
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: inset 30px 30px 30px 10px var(--secondary-color), inset -30px -30px 30px 10px var(--secondary-color);
+}
+.landing .text .content {
+    max-width: 500px;
+}
+.landing .text .content h2{
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 800;
+}
+.landing .text .content p {
+    font-size: 15px;
+    line-height: 2;
+    font-weight: bold;
+}
+header nav ul .serv {
+    position: relative;
+}
+header nav ul .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
+    right: 300px;
+    min-width: 240px;
+    top: calc(100% + 10px);
+    display: block;
+    z-index: 1;
+}
+header nav ul .links ul::before {
+    content: "";
+    border-top-width: 10px;
+    border-bottom-width: 25px;
+    border-right-width: 17px;
+    border-left-width: 17px;
+    border-style: solid;
+    border-color: transparent transparent rgb(0 0 0 / 60%) transparent;
+    position: absolute;
+    right: 5px;
+    top: -35px;
+  }
+header nav ul .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: var(--main-duration);
+    border-bottom: 1px solid var(--main-color);
+}
+header nav ul .links ul li a:hover {
+    padding-left: 30px;
+}
+/* End Landing */
+/* Start Sports */
+.sports {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.sports .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.sports .imgs-container .box {
+    overflow: hidden;
+    position: relative;
+}
+.sports .imgs-container .box:hover .caption {
+    bottom: 0;
+}
+.sports .imgs-container .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+@media (min-width: 768px) {
+    .sports .imgs-container .box {
+      flex-basis: 50%;
+    }
+}
+  @media (min-width: 1199px) {
+    .sports .imgs-container .box {
+      flex-basis: 25%;
+    }
+}
+.sports .imgs-container .box img {
+    max-width: 100%;
+    transition: 0.3s;
+}
+.sports .imgs-container .box .caption {
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    /* Is secondary-color better or not ??????? */
+    background-color: white;
+    width: 100%;
+    transition: 0.3s;
+    bottom: -100%;
+}
+.sports .imgs-container .box .caption h4 {
+    font-weight: bolder;
+    margin-bottom: 15px;
+    /* Is white better ?????? */
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+}
+/* End Sports */
+/* Start News */
+.news {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.news table {
+    /* Is better to put it in container */
+    min-width: 100%;
+    margin: 0 auto;
+}
+.head td {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+.radius-left {
+    border-top-left-radius: 20px;
+}
+.radius-right {
+    border-top-right-radius: 20px;
+}
+.body td {
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 15px;
+    /* background-color: var(--main-color); */
+    color: black;
+    border-left: 3px solid var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    border-radius: 8px;
+}
+.grey td {
+    background-color: var(--grey-color);
+    color: var(--secondary-color);
+}
+.body td a {
+    text-decoration: none;
+    width: 100px;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+}
+.body td a:hover {
+    color: green;
+    background-color: white;
+    box-shadow: 1px 1px 8px 1px var(--main-color), -1px -1px 8px 1px var(--main-color);
+}
+.news .content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+div.lable {
+    text-align: center;
+}
+div.lable h3 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-top: 80px;
+    color: var(--secondary-color);
+    text-shadow: 1.5px 1.5px var(--main-color);
+}
+
+.news .content .text {
+    width:57.5%;
+}
+.first-p {
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 2px 2px 10px 1px var(--main-color), -4px -4px 0px 0px var(--secondary-color);
+}
+.second-p {
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 2px 2px 10px 1px var(--main-color), -4px -4px 0px 0px var(--secondary-color);
+}
+.news .content .text p {
+    line-height: 1.8;
+}
+.news .content .audio {
+    width: 37.5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 4px 4px 0px 0px var(--secondary-color), -2px -2px 10px 1px var(--main-color);
+}
+.news .content .audio audio {
+    background-color: #f1f3f4;
+    /* border-radius: 100%; */
+    border-bottom-left-radius: inherit;
+    border-top-right-radius: inherit;
+    box-shadow: 1px 1px 3px 0 var(--secondary-color), -1px -1px 3px 0 var(--secondary-color);
+}
+.content-video {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.text-video {
+    width: 37.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+.text-video p {
+    line-height: 1.8;
+}
+.first-p-video {
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 2px 2px 10px 1px var(--main-color), -2px -2px 10px 1px var(--secondary-color);
+    position: relative;
+}
+.second-p-video {
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 2px 2px 10px 1px var(--main-color), -2px -2px 10px 1px var(--secondary-color);
+    position: relative;
+}
+.videos {
+    width: 57.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.videos video {
+    /* width: 600px;
+    height: 47.5%; */
+    width: 600px;
+    height: 47.5%;
+    box-shadow: -1px -1px 6px 0 black, 1px 1px 6px 0 black;
+}
+.load {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+.load div:hover {
+    /* animation-name: up-and-down; */
+    animation-play-state: paused;
+}
+.load div {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation-name: up-and-down;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.load .two {
+    animation-delay: 0.3s;
+}
+.load .three {
+    animation-delay: 0.6s;
+}
+@keyframes up-and-down {
+    to {
+        opacity: 0.2;
+        transform: translateY(-20px);
+    }
+
+}
+/* End News */
+/* Start About */
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--grey-color);
+}
+.about .container .content-about {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.about .container .text {
+    width: 57.5%;
+
+}
+.about .container .image {
+    width: 37.5%;
+    position: relative;
+    height: 375px;
+}
+.about .content-about .image::before {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 90px);
+    top: -28px;
+    left: -35px;
+    z-index: 1;
+    box-shadow: -2px -2px 4px 1px var(--main-color), -2px 2px 4px 1px var(--main-color);
+}
+.about .content-about .image::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 120px;
+    height: 310px;
+    width: 100px;
+    height: calc(100% + 90px);
+    right: -46px;
+    top: -28px;
+    background-color: var(--main-color);
+    box-shadow: 2px 2px 4px 1px var(--secondary-color), 2px -2px 4px 1px var(--secondary-color);
+}
+.about .content-about .text {
+    flex-basis: calc(100% - 500px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.about .container .image img {
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.about .container .text p:first-of-type {
+    font-weight: bold;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    text-align: start;
+    margin-left: 0;
+}
+.about .content-about .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.about .container .text p:last-of-type {
+    line-height: 1.8;
+    color: #777;
+    margin-top: 50px;
+    text-align: start;
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
+}
+/* End About */
+/* Start Contact Us */
+.contact {
+    min-height: 100vh;
+    background-image: url("../images/back2.jpg");
+    background-size: cover;
+    position: relative;
+    background-color: #f6f6f6;
+    padding-top: 60px;
+    padding-bottom: var(--main-padding);
+}
+.contact .container {
+    padding-top: 15px;
+}
+.contact .container .contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+.contact .container .contact-content .info {
+    width: 47.5%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+    box-shadow: 2px 2px 10px 1px var(--secondary-color), -2px -2px 10px 1px var(--main-color);
+}
+.contact .container .contact-content .feedback {
+    width: 47.5%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    box-shadow: 2px 2px 10px 1px var(--secondary-color), -2px -2px 10px 1px var(--main-color);
+}
+.contact .container .contact-content .feedback h3 {
+    height: 15%;
+    color: var(--main-color);
+    padding-left: 25px;
+}
+.contact .container .contact-content .feedback form {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+.main-input,
+.send {
+    height: calc(60% / 3);
+    border-color: var(--secondary-color);
+    background: none;
+    width: 80%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px  solid var(--main-color);
+    outline: none;
+    margin: 0 10px;
+    margin-top: 12px;
+    font-size: 17px;
+}
+/* My Error */
+.contact .container .contact-content .feedback form .box {
+    height: 30%;
+    padding-top: 10px;
+}
+.contact .container .contact-content .info .info-box {
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+.contact .container .contact-content .info .info-box i {
+    color: var(--secondary-color);
+    font-size: 32px;
+    padding-bottom: 16px;
+}
+.contact .container .contact-content .info .info-box h4 {
+    font-size: 20px;
+    color: var(--main-color);
+    padding-bottom: 5px;
+}
+.send:hover {
+    color: green;
+    background-color: white;
+    box-shadow: 1px 1px 8px 1px var(--main-color), -1px -1px 8px 1px var(--main-color);
+    
+}
+.send {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--main-color);
+    color: black;
+    border-style: none;
+}
+.contact .main-heading h2 {
+    color: white;
+    font-weight: bolder;
+}
+.contact .main-heading p {
+    color: white;
+    font-weight: bold;
+}
+/* End Contact Us */
+/* Start Footer */
+.footer {
+    padding-top: calc(var(--section-padding) / 2);
+    padding-bottom: calc(var(--section-padding) / 2);
+    background-color: var(--secondary-color);
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+.footer .container {
+    position: relative;
+}
+
+.footer p:not(.copyright) {
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    font-size: 22px;
+    width: fit-content;
+    margin: 20px auto;
+    margin-top: 0;
+    color: var(--main-color);
+    font-weight: bolder;
+}
+.footer .social-icons i {
+    padding: 10px 15px;
+}
+.footer .copyright {
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+.footer .copyright span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+.footer .container .social-icons a {
+    color: white;
+}
+/* End Footer */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+.sticky + .all-content {
+    padding-top: 102px;
+}
